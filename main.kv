@@ -1,0 +1,49 @@
+ScreenManager:
+    ScanScreen:
+    ResultScreen:
+
+<ScanScreen>:
+    name: "scan"
+    MDFloatLayout:
+        MDLabel:
+            text: "Scannerizza un barcode"
+            halign: "center"
+            pos_hint: {"center_y": .7}
+        MDRaisedButton:
+            text: "Scan"
+            pos_hint: {"center_x": .5, "center_y": .5}
+            on_release: root.on_enter()
+
+<ResultScreen>:
+    name: "result"
+    MDBoxLayout:
+        orientation: 'vertical'
+        padding: 20
+        spacing: 10
+        MDLabel:
+            id: prod_label
+            text: ""
+            halign: "center"
+            font_style: "H6"
+        MDBoxLayout:
+            spacing: 15
+            MDLabel:
+                id: price_current
+                text: ""
+                halign: "center"
+            MDLabel:
+                id: price_avg
+                text: ""
+                halign: "center"
+            MDLabel:
+                id: smile
+                text: ""
+                font_style: "H4"
+                halign: "center"
+        ScrollView:
+            MDLabel:
+                id: history
+                text: ""
+                halign: "left"
+                size_hint_y: None
+                height: self.texture_size[1]
